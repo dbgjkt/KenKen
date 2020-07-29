@@ -198,16 +198,16 @@ int check_n_fill(char *sol, char *candidates, int grid, char *field, int *oper, 
 void solvepuzzle(char *sol, char *field, int *oper, int grid, int cage)
 {
 	/************************************************************************
-	*	solve: the solution of board, length = n*n							*
-	*	field: the field of board, length = n*n								*
-	*	oper: the operation	& value of board, length = Fn*2					*
-	*		oper[2*i]:	operation of field									*
-	*					0:'+',												*
-	*					1:'-',												*
-	*					2:'*',												*
-	*					3:'/'												*
-	*		oper[2*i+1]:the value of execution								*
-	*	n: the GRID of the board											*
+	*    solve: the solution of board, length = n*n                         *
+	*    field: the field of board, length = n*n                            *
+	*    oper: the operation    & value of board, length = Fn*2             *
+	*        oper[2*i]:    operation of field                               *
+	*                    0:'+',                                             *
+	*                    1:'-',                                             *
+	*                    2:'*',                                             *
+	*                    3:'/'                                              *
+	*        oper[2*i+1]:the value of execution                             *
+	*    n: the GRID of the board                                           *
 	************************************************************************/
 	char *blocks_of_cages;	/*number of blocks of one cage, the array length = cage*/
 	char *blocks_of_fields; /*number of blocks of each cage, the array length = n*n*/
@@ -215,7 +215,7 @@ void solvepuzzle(char *sol, char *field, int *oper, int grid, int cage)
 	char *cage_friends;		/*record who is the friend of cage, the array length = n*n*/
 	char *cage_index;
 	/************************************************************************
-	*					  A Sample of These Variables						*
+	*                      A Sample of These Variables                      *
 	*   kenken:        Field:     BoF:       Oper:                          *
 	*     -2 -2| 4|x6    0 0 1 2    2 2 1 3    - + x / - - + /              *
 	*     /2 /2|x6 x6    3 3 2 2    2 2 3 3    2 4 6 2 1 3 7 2              *
@@ -227,12 +227,12 @@ void solvepuzzle(char *sol, char *field, int *oper, int grid, int cage)
 	*     0    2  3      6    8    10     12     14                         *
 	*************************************************************************/
 	/************************************************************************
-	*						How To Solve Kenken								*
-	*	1.	Check all possibilities of numbers in every block.				*
-	*	2.	If one block has only one number to fill, fill it up.			*
-	*	3.	remove impossible numbers from blocks.							*
-	*	4.	If the board is not solved, back to step 2.						*
-	*																		*
+	*                        How To Solve Kenken                            *
+	*    1.    Check all possibilities of numbers in every block.           *
+	*    2.    If one block has only one number to fill, fill it up.        *
+	*    3.    remove impossible numbers from blocks.                       *
+	*    4.    If the board is not solved, back to step 2.                  *
+	*                                                                       *
 	*************************************************************************/
 	int i, j, k;
 	/*initialize BoC*/
